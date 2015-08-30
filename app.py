@@ -15,6 +15,7 @@ from stop_words import stops
 
 
 
+
 #
 # Configurations
 #
@@ -70,7 +71,7 @@ def index():
                 db.session.commit()
             except:
                 errors.append("Unable to add item to database")
-        return render_template('index.html', errors=errors, results=results)
+    return render_template('index.html', errors=errors, results=results)
 
 
 if __name__ == '__main__':
