@@ -1,9 +1,15 @@
+__author__ = 'tushar'
+
 import os
 
 from flask import Flask
+from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config.from_object(os.environ.get('APP_SETTINGS'))
+db = SQLAlchemy(app)
+
+from models import Result
 
 
 @app.route('/')
